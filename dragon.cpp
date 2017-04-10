@@ -30,26 +30,36 @@ double arrayfloat[] = {
 	121, 269
 };
 
-int ukuranvertex = 17;
+double arrayHead[] = {
+    236,326,
+    218,350,
+    262,391,
+    283,377
+};
 
-Point vertex[17];
+int ukuranvertex;
+
+Point* vertex;
 
 
 
-void floattopoint(){
-	int i = 0;
-	int j = 0;
-	for (i = 0; i < ukuranvertex; i++){
-		vertex[i].x = arrayfloat[j]; j++;
-		vertex[i].y = (1000-arrayfloat[j]); j++;
-	}
+Point* floattopoint(double* x, int len){
+    int i = 0;
+    int j = 0;
+    cout << len << endl;
+    Point* ret = new Point[len/2];
+    for (i = 0; i < len/2; i++){
+            ret[i].x = x[j]; j++;
+            ret[i].y = (1000-x[j]); j++;
+            cout << x[j-2] << "," << x[j-1] << endl;
+    }
+    return ret;
 }
 
 void Draw() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 1.0, 0.0);
 	glBegin(GL_POLYGON);
-	
 	for (int i = 0; i < ukuranvertex; i++){
 		glVertex2d(vertex[i].x, vertex[i].y);
 	}
@@ -66,7 +76,6 @@ void Initialize() {
 	glLoadIdentity();
 	glOrtho(0.0 , 800.0 , 0.0 , 1000.0, -10.0 , 10.0);
 	glEnable(GL_COLOR_MATERIAL);
-	floattopoint();
 }
 
 
@@ -79,7 +88,10 @@ int main(int iArgc, char** cppArgv) {
 	glutCreateWindow("Contoh Gan ");
 	Initialize();
 	cout << "Semangat" <<endl<<endl;
-
+        int len = sizeof(arrayfloat)/sizeof(arrayfloat[0]);
+        cout << len << endl;
+        vertex = floattopoint(arrayfloat,len);
+        ukuranvertex=len/2;
 	for (int i = 0; i < ukuranvertex; i++){
 		cout << "Vertex " <<i<< " = " << vertex[i].x << " , " << vertex[i].y << endl;
 	}
