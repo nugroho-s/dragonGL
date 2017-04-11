@@ -194,7 +194,10 @@ int head_tri1[] = {
 	328,319,
 	322,331,
 	333,309,
-	375,311
+	375,311,
+	275,311,
+	320,330,
+	331,311
 };
 
 int head_fan1[] = {
@@ -224,7 +227,7 @@ int head_fan3[] = {
 int head_fan4[] = {
 	230,341,
 	275,311,
-	320,311,
+	320,330,
 	295,345,
 	281,377,
 	267,386,
@@ -255,7 +258,7 @@ int head_tri2[] = {
 };
 
 int head_fan5[] = {
-	386,506,
+	286,506,
 	261,567,
 	249,458,
 	312,459,
@@ -387,7 +390,7 @@ void drawTriangles(int* arr,int len, char mode){
 
 // Drawing head
 void head(){
-	drawTriangles(head_tri1,6,'t');
+	drawTriangles(head_tri1,9,'t');
 	drawTriangles(head_fan1,5,'f');
 	drawTriangles(head_fan2,5,'f');
 	drawTriangles(head_fan3,5,'f');
