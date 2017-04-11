@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include <GL/glut.h>
 #include <iostream>
 
@@ -6,7 +7,7 @@
 using namespace std;
 
 // Paha kanan part 1
-int pka1 [] = {
+int pka1[] = {
 	420, 534,
 	420, 590,
 	426, 488,
@@ -35,6 +36,76 @@ int pka3[] = {
 	439, 703,
 	435, 701
 };
+
+int ska1[] = {
+	99, 279,
+	176, 257,
+	173, 272,
+	211, 300,
+	171, 298,
+	161, 302,
+	140, 315,
+	121, 328,
+	107, 343,
+	98, 358,
+	93, 313
+};
+
+int ska2[] = {
+	160, 121,
+	178, 102,
+	201, 81,
+	243, 59,
+	260, 54,
+	224, 78,
+	192, 109,
+	163, 150,
+	139, 198,
+	123, 240,
+	122, 252,
+	120, 277,
+	99, 279,
+	115, 222,
+	137, 174
+};
+
+int ska3[] = {
+	185, 162,
+	156, 208,
+	120, 279,
+	146, 266,
+	173, 212,
+	200, 172,
+	279, 79,
+	308, 55,
+	278, 69,
+	243, 95
+};
+
+int ska4[] = {
+	281, 133,
+	227, 179,
+	146, 266,
+	175, 257,
+	228, 200,
+	300, 144,
+	366, 105,
+	439, 69,
+	370, 89,
+	340, 101
+};
+
+int ska5[] = {
+	210, 299,
+	172, 273,
+	224, 256,
+	223, 269,
+	231, 281,
+	245, 291,
+	225, 328
+
+};
+
 
 int ski1[] = {
 	349, 211,
@@ -142,228 +213,228 @@ int ski7[] = {
 };
 
 int tail_tri1[] = {
-	379,702,
-	375,726,
-	315,755,
-	304,765,
-	379,702,
-	287,747
+	379, 702,
+	375, 726,
+	315, 755,
+	304, 765,
+	379, 702,
+	287, 747
 };
 
 int tail_strip1[] = {
-	287,747,
-	304,765,
-	262,773,
-	272,815,
-	243,824
+	287, 747,
+	304, 765,
+	262, 773,
+	272, 815,
+	243, 824
 };
 
 int tail_fan1[] = {
-	272,815,
-	243,824,
-	253,858,
-	271,881
+	272, 815,
+	243, 824,
+	253, 858,
+	271, 881
 };
 
 int tail_tri2[] = {
-	273,834,
-	297,900,
-	271,881
+	273, 834,
+	297, 900,
+	271, 881
 };
 
 int tail_strip2[] = {
-	297,900,
-	280,852,
-	331,905,
-	347,884,
-	390,924,
-	403,907,
-	438,941
+	297, 900,
+	280, 852,
+	331, 905,
+	347, 884,
+	390, 924,
+	403, 907,
+	438, 941
 };
 
 int tail_fan2[] = {
-	438,941,
-	390,924,
-	435,940,
-	451,981
+	438, 941,
+	390, 924,
+	435, 940,
+	451, 981
 };
 
 int head_tri1[] = {
-	322,331,
-	366,326,
-	328,319,
-	275,311,
-	320,330,
-	334,309
+	322, 331,
+	366, 326,
+	328, 319,
+	275, 311,
+	320, 330,
+	334, 309
 };
 
 int head_fan1[] = {
-	352,273,
-	300,311,
-	333,309,
-	345,290,
-	375,273
+	352, 273,
+	300, 311,
+	333, 309,
+	345, 290,
+	375, 273
 };
 
 int head_fan2[] = {
-	304,274,
-	276,311,
-	298,311,
-	302,292,
-	329,261
+	304, 274,
+	276, 311,
+	298, 311,
+	302, 292,
+	329, 261
 };
 
 int head_fan3[] = {
-	254,292,
-	230,341,
-	259,322,
-	258,311,
-	277,274
+	254, 292,
+	230, 341,
+	259, 322,
+	258, 311,
+	277, 274
 };
 
 int head_fan4[] = {
-	230,341,
-	275,311,
-	320,330,
-	295,345,
-	281,377,
-	267,386,
-	258,410,
-	230,406,
-	210,357
+	230, 341,
+	275, 311,
+	320, 330,
+	295, 345,
+	281, 377,
+	267, 386,
+	258, 410,
+	230, 406,
+	210, 357
 };
 
 int head_tri2[] = {
-	212,361,
-	188,450,
-	249,450,
-	212,361,
-	206,382,
-	197,357,
-	197,357,
-	212,361,
-	209,348,
-	197,357,
-	206,382,
-	197,398,
-	187,414,
-	206,382,
-	188,450,
-	188,450,
-	249,450,
-	260,559
+	212, 361,
+	188, 450,
+	249, 450,
+	212, 361,
+	206, 382,
+	197, 357,
+	197, 357,
+	212, 361,
+	209, 348,
+	197, 357,
+	206, 382,
+	197, 398,
+	187, 414,
+	206, 382,
+	188, 450,
+	188, 450,
+	249, 450,
+	260, 559
 };
 
 int head_fan5[] = {
-	286,506,
-	261,567,
-	249,458,
-	312,459,
-	334,537
+	286, 506,
+	261, 567,
+	249, 458,
+	312, 459,
+	334, 537
 };
 
 int head_strip1[] = {
-	176,503,
-	200,517,
-	195,529,
-	223,520,
-	246,544,
-	231,517
+	176, 503,
+	200, 517,
+	195, 529,
+	223, 520,
+	246, 544,
+	231, 517
 };
 
 int head_tri3[] = {
-	246,544,
-	231,517,
-	255,552,
-	222,537,
-	238,540,
-	211,541
+	246, 544,
+	231, 517,
+	255, 552,
+	222, 537,
+	238, 540,
+	211, 541
 };
 
 int head_fan6[] = {
-	304,552,
-	280,548,
-	281,523,
-	303,520,
-	310,521,
-	335,554,
-	322,566
+	304, 552,
+	280, 548,
+	281, 523,
+	303, 520,
+	310, 521,
+	335, 554,
+	322, 566
 };
 
 int head_fan7[] = {
-	278,575,
-	281,517,
-	262,565,
-	288,603,
-	294,585,
-	287,566,
-	279,564
+	278, 575,
+	281, 517,
+	262, 565,
+	288, 603,
+	294, 585,
+	287, 566,
+	279, 564
 };
 
 int head_tri4[] = {
-	288,603,
-	294,585,
-	311,589
+	288, 603,
+	294, 585,
+	311, 589
 };
 
 int head_tri5[] = {
-	312,560,
-	306,571,
-	322,565,
-	322,565,
-	329,569,
-	322,577
+	312, 560,
+	306, 571,
+	322, 565,
+	322, 565,
+	329, 569,
+	322, 577
 };
 
 int head_tri6[] = {
-	340,550,
-	320,566,
-	342,574,
-	341,544,
-	342,574,
-	361,565
+	340, 550,
+	320, 566,
+	342, 574,
+	341, 544,
+	342, 574,
+	361, 565
 };
 
 int head_fan8[] = {
-	334,539,
-	361,566,
-	369,545,
-	353,518,
-	345,526,
-	329,518
+	334, 539,
+	361, 566,
+	369, 545,
+	353, 518,
+	345, 526,
+	329, 518
 };
 
 int head_fan9[] = {
-	322,499,
-	328,517,
-	333,512,
-	333,505,
-	328,492,
-	318,481
+	322, 499,
+	328, 517,
+	333, 512,
+	333, 505,
+	328, 492,
+	318, 481
 };
 
 int head_tri7[] = {
-	248,458,
-	275,458,
-	248,449,
-	275,458,
-	248,449,
-	256,420,
-	252,436,
-	240,414,
-	256,420,
-	275,458,
-	298,454,
-	313,459,
-	298,454,
-	313,459,
-	297,429,
-	298,454,
-	275,458,
-	267,418,
-	310,522,
-	334,554,
-	336,536
+	248, 458,
+	275, 458,
+	248, 449,
+	275, 458,
+	248, 449,
+	256, 420,
+	252, 436,
+	240, 414,
+	256, 420,
+	275, 458,
+	298, 454,
+	313, 459,
+	298, 454,
+	313, 459,
+	297, 429,
+	298, 454,
+	275, 458,
+	267, 418,
+	310, 522,
+	334, 554,
+	336, 536
 };
 
 //draw triangles
@@ -372,91 +443,91 @@ t: GL_TRIANGLES
 s: GL_TRIANGLE_STRIP
 f: GL_TRIANGLE_FAN
 */
-void drawTriangles(int* arr,int len, char mode){
-	if(mode=='t')
+void drawTriangles(int* arr, int len, char mode){
+	if (mode == 't')
 		glBegin(GL_TRIANGLES);
-	else if (mode=='s')
+	else if (mode == 's')
 		glBegin(GL_TRIANGLE_STRIP);
-	else if (mode=='f')
+	else if (mode == 'f')
 		glBegin(GL_TRIANGLE_FAN);
-	int j=0;
-	for (int i=0;i<len;i++){
+	int j = 0;
+	for (int i = 0; i<len; i++){
 		//cout << arr[j] << "," << arr[j+1]<< endl;
-		glVertex2f(arr[j],ymaks-arr[j+1]);
-		j+=2;
+		glVertex2f(arr[j], ymaks - arr[j + 1]);
+		j += 2;
 	}
 	glEnd();
 };
 
 // Drawing head
 void head(){
-	drawTriangles(head_tri1,6,'t');
-	drawTriangles(head_fan1,5,'f');
-	drawTriangles(head_fan2,5,'f');
-	drawTriangles(head_fan3,5,'f');
-	drawTriangles(head_fan4,9,'f');
-	drawTriangles(head_tri2,18,'t');
-	drawTriangles(head_fan5,5,'f');
-	drawTriangles(head_strip1,6,'s');
-	drawTriangles(head_tri3,6,'t');
-	drawTriangles(head_fan6,7,'f');
-	drawTriangles(head_fan7,7,'f');
-	drawTriangles(head_tri4,3,'t');
-	drawTriangles(head_tri5,6,'t');
-	drawTriangles(head_tri6,6,'t');
-	drawTriangles(head_fan8,6,'f');
-	drawTriangles(head_fan9,6,'f');
-	drawTriangles(head_tri7,21,'t');
+	drawTriangles(head_tri1, 6, 't');
+	drawTriangles(head_fan1, 5, 'f');
+	drawTriangles(head_fan2, 5, 'f');
+	drawTriangles(head_fan3, 5, 'f');
+	drawTriangles(head_fan4, 9, 'f');
+	drawTriangles(head_tri2, 18, 't');
+	drawTriangles(head_fan5, 5, 'f');
+	drawTriangles(head_strip1, 6, 's');
+	drawTriangles(head_tri3, 6, 't');
+	drawTriangles(head_fan6, 7, 'f');
+	drawTriangles(head_fan7, 7, 'f');
+	drawTriangles(head_tri4, 3, 't');
+	drawTriangles(head_tri5, 6, 't');
+	drawTriangles(head_tri6, 6, 't');
+	drawTriangles(head_fan8, 6, 'f');
+	drawTriangles(head_fan9, 6, 'f');
+	drawTriangles(head_tri7, 21, 't');
 };
 
 // Drawing tail
 void tail(){
 	glBegin(GL_TRIANGLES);
-	int j=0;
-	for (int i=0;i<6;i++){
-		cout << tail_tri1[j] << "," << tail_tri1[j+1]<< endl;
-		glVertex2f(tail_tri1[j],ymaks-tail_tri1[j+1]);
-		j+=2;
+	int j = 0;
+	for (int i = 0; i<6; i++){
+		cout << tail_tri1[j] << "," << tail_tri1[j + 1] << endl;
+		glVertex2f(tail_tri1[j], ymaks - tail_tri1[j + 1]);
+		j += 2;
 	}
 	glEnd();
 
 	glBegin(GL_TRIANGLE_STRIP);
-	j=0;
-	for (int i=0;i<5;i++){
-		glVertex2f(tail_strip1[j],ymaks-tail_strip1[j+1]);
-		j+=2;
+	j = 0;
+	for (int i = 0; i<5; i++){
+		glVertex2f(tail_strip1[j], ymaks - tail_strip1[j + 1]);
+		j += 2;
 	}
 	glEnd();
 
 	glBegin(GL_TRIANGLE_FAN);
-	j=0;
-	for (int i=0;i<4;i++){
-		glVertex2f(tail_fan1[j],ymaks-tail_fan1[j+1]);
-		j+=2;
+	j = 0;
+	for (int i = 0; i<4; i++){
+		glVertex2f(tail_fan1[j], ymaks - tail_fan1[j + 1]);
+		j += 2;
 	}
 	glEnd();
 
 	glBegin(GL_TRIANGLES);
-	j=0;
-	for (int i=0;i<3;i++){
-		glVertex2f(tail_tri2[j],ymaks-tail_tri2[j+1]);
-		j+=2;
+	j = 0;
+	for (int i = 0; i<3; i++){
+		glVertex2f(tail_tri2[j], ymaks - tail_tri2[j + 1]);
+		j += 2;
 	}
 	glEnd();
 
 	glBegin(GL_TRIANGLE_STRIP);
-	j=0;
-	for (int i=0;i<7;i++){
-		glVertex2f(tail_strip2[j],ymaks-tail_strip2[j+1]);
-		j+=2;
+	j = 0;
+	for (int i = 0; i<7; i++){
+		glVertex2f(tail_strip2[j], ymaks - tail_strip2[j + 1]);
+		j += 2;
 	}
 	glEnd();
 
 	glBegin(GL_TRIANGLE_FAN);
-	j=0;
-	for (int i=0;i<4;i++){
-		glVertex2f(tail_fan2[j],ymaks-tail_fan2[j+1]);
-		j+=2;
+	j = 0;
+	for (int i = 0; i<4; i++){
+		glVertex2f(tail_fan2[j], ymaks - tail_fan2[j + 1]);
+		j += 2;
 	}
 	glEnd();
 }
@@ -468,7 +539,7 @@ void pahakanan(){
 	int j = 0;
 
 	for (int i = 0; i < 9; i++){
-		glVertex2f(pka1[j],1000-pka1[j+1]);
+		glVertex2f(pka1[j], 1000 - pka1[j + 1]);
 		j = j + 2;
 	}
 	glEnd();
@@ -477,7 +548,7 @@ void pahakanan(){
 	j = 0;
 
 	for (int i = 0; i < 5; i++){
-		glVertex2f(pka2[j], 1000-pka2[j + 1]);
+		glVertex2f(pka2[j], 1000 - pka2[j + 1]);
 		j = j + 2;
 	}
 	glEnd();
@@ -486,12 +557,72 @@ void pahakanan(){
 	j = 0;
 
 	for (int i = 0; i < 3; i++){
-		glVertex2f(pka3[j], 1000-pka3[j + 1]);
+		glVertex2f(pka3[j], 1000 - pka3[j + 1]);
 		j = j + 2;
 	}
 
 	glEnd();
 }
+//Menggambarkan sayap kanan
+
+void sayapkanan(){
+	glBegin(GL_TRIANGLE_FAN);
+
+	int j = 0;
+
+	for (int i = 0; i < 11; i++){
+		glVertex2f(ska1[j], 1000 - ska1[j + 1]);
+		j = j + 2;
+	}
+
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 15; i++){
+		glVertex2f(ska2[j], 1000 - ska2[j + 1]);
+		j = j + 2;
+	}
+
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 10; i++){
+		glVertex2f(ska3[j], 1000 - ska3[j + 1]);
+		j = j + 2;
+	}
+
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 10; i++){
+		glVertex2f(ska4[j], 1000 - ska4[j + 1]);
+		j = j + 2;
+	}
+
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 7; i++){
+		glVertex2f(ska5[j], 1000 - ska5[j + 1]);
+		j = j + 2;
+	}
+
+	glEnd();
+
+}
+
 
 
 //Menggambarkan sayap kiri
@@ -573,6 +704,7 @@ void Draw() {
 	head();
 	pahakanan();
 	sayapkiri();
+	sayapkanan();
 	tail();
 	glFlush();
 }
@@ -582,7 +714,7 @@ void Initialize() {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(0, 800, 0 , 1000, -2, 2);
+	glOrtho(0, 800, 0, 1000, -2, 2);
 	glEnable(GL_COLOR_MATERIAL);
 }
 
