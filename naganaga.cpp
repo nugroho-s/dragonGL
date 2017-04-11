@@ -188,6 +188,225 @@ int tail_fan2[] = {
 	451,981
 };
 
+int head_tri1[] = {
+	322,331,
+	366,326,
+	328,319,
+	322,331,
+	333,309,
+	375,311
+};
+
+int head_fan1[] = {
+	352,273,
+	300,311,
+	333,309,
+	345,290,
+	375,273
+};
+
+int head_fan2[] = {
+	304,274,
+	276,311,
+	398,311,
+	302,292,
+	329,261
+};
+
+int head_fan3[] = {
+	254,292,
+	230,341,
+	259,322,
+	258,311,
+	277,274
+};
+
+int head_fan4[] = {
+	230,341,
+	275,311,
+	320,311,
+	295,345,
+	281,377,
+	267,386,
+	258,410,
+	230,406,
+	210,357
+};
+
+int head_tri2[] = {
+	212,361,
+	188,450,
+	249,450,
+	212,361,
+	206,382,
+	197,357,
+	197,357,
+	212,361,
+	209,348,
+	197,357,
+	206,382,
+	197,398,
+	187,414,
+	206,382,
+	188,450,
+	188,450,
+	249,450,
+	260,559
+};
+
+int head_fan5[] = {
+	386,506,
+	261,567,
+	249,458,
+	312,459,
+	334,537
+};
+
+int head_strip1[] = {
+	176,503,
+	200,517,
+	195,529,
+	223,520,
+	246,544,
+	231,517
+};
+
+int head_tri3[] = {
+	246,544,
+	231,517,
+	255,552,
+	222,537,
+	238,540,
+	211,541
+};
+
+int head_fan6[] = {
+	304,552,
+	280,548,
+	281,523,
+	303,520,
+	310,521,
+	335,554,
+	322,566
+};
+
+int head_fan7[] = {
+	278,575,
+	281,517,
+	262,571,
+	288,603,
+	294,585,
+	287,566,
+	279,564
+};
+
+int head_tri4[] = {
+	288,603,
+	294,585,
+	311,589
+};
+
+int head_tri5[] = {
+	312,560,
+	306,571,
+	322,565,
+	322,565,
+	329,569,
+	322,577
+};
+
+int head_tri6[] = {
+	340,550,
+	320,566,
+	342,574,
+	341,544,
+	342,574,
+	361,565
+};
+
+int head_fan8[] = {
+	334,539,
+	361,566,
+	369,545,
+	353,518,
+	345,526,
+	329,518
+};
+
+int head_fan9[] = {
+	322,499,
+	328,517,
+	333,512,
+	333,505,
+	328,492,
+	318,481
+};
+
+int head_tri7[] = {
+	248,458,
+	275,458,
+	248,449,
+	275,458,
+	248,449,
+	256,420,
+	252,436,
+	240,414,
+	256,420,
+	275,458,
+	298,454,
+	313,459,
+	298,454,
+	313,459,
+	297,429,
+	298,454,
+	275,458,
+	267,418
+};
+
+//draw triangles
+/* mode
+t: GL_TRIANGLES
+s: GL_TRIANGLE_STRIP
+f: GL_TRIANGLE_FAN
+*/
+void drawTriangles(int* arr,int len, char mode){
+	if(mode=='t')
+		glBegin(GL_TRIANGLES);
+	else if (mode=='s')
+		glBegin(GL_TRIANGLE_STRIP);
+	else if (mode=='f')
+		glBegin(GL_TRIANGLE_FAN);
+	int j=0;
+	for (int i=0;i<len;i++){
+		//cout << arr[j] << "," << arr[j+1]<< endl;
+		glVertex2f(arr[j],ymaks-arr[j+1]);
+		j+=2;
+	}
+	glEnd();
+};
+
+// Drawing head
+void head(){
+	drawTriangles(head_tri1,6,'t');
+	drawTriangles(head_fan1,5,'f');
+	drawTriangles(head_fan2,5,'f');
+	drawTriangles(head_fan3,5,'f');
+	drawTriangles(head_fan4,9,'f');
+	drawTriangles(head_tri2,18,'t');
+	drawTriangles(head_fan5,5,'f');
+	drawTriangles(head_strip1,6,'s');
+	drawTriangles(head_tri3,6,'t');
+	drawTriangles(head_fan6,7,'f');
+	drawTriangles(head_fan7,7,'f');
+	drawTriangles(head_tri4,3,'t');
+	drawTriangles(head_tri5,6,'t');
+
+	drawTriangles(head_tri6,6,'t');
+	drawTriangles(head_fan8,6,'f'); // salah
+
+	drawTriangles(head_fan9,6,'f');
+	drawTriangles(head_tri7,18,'t');
+};
 
 // Drawing tail
 void tail(){
@@ -354,6 +573,7 @@ void Draw() {
 	pahakanan();
 	sayapkiri();
 	tail();
+	head();
 	glFlush();
 }
 
