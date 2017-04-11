@@ -212,6 +212,33 @@ int ski7[] = {
 	291, 376
 };
 
+int pki1[] = {
+	436, 433,
+	448, 428,
+	463, 428,
+	479, 440,
+	496, 456,
+	513, 482,
+	497, 478,
+	483, 479,
+	479, 490,
+	488, 508,
+	507, 534,
+	485, 531,
+	458, 518,
+	425, 484,
+	423, 464
+};
+
+int pki2[] = {
+	502, 503,
+	503, 517,
+	483, 508,
+	506, 534,
+	532, 534
+};
+
+
 int tail_tri1[] = {
 	379, 702,
 	375, 726,
@@ -563,6 +590,31 @@ void pahakanan(){
 
 	glEnd();
 }
+
+void pahakiri(){
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	int j = 0;
+
+	for (int i = 0; i < 15; i++){
+		glVertex2f(pki1[j], 1000 - pki1[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 5; i++){
+		glVertex2f(pki2[j], 1000 - pki2[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+
+}
+
+
 //Menggambarkan sayap kanan
 
 void sayapkanan(){
@@ -703,6 +755,7 @@ void Draw() {
 	glColor3ub(255, 0, 0);
 	head();
 	pahakanan();
+	pahakiri();
 	sayapkiri();
 	sayapkanan();
 	tail();
