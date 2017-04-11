@@ -17,12 +17,12 @@ Point* vertex;
 
 
 
-void Draw() {
+void Draw(dragon x) {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 1.0, 0.0);
-	pahakanan();
-	sayapkiri();
-	drawWings();
+	x.pahakanan();
+	x.sayapkiri();
+	x.drawWings();
 	glFlush();
 }
 
@@ -41,7 +41,7 @@ void Initialize() {
 int main(int iArgc, char** cppArgv) {
     dragon x(&iArgc,cppArgv);
     cout << "Semangat" <<endl<<endl;
-    x.drawWings();
+    Draw(x);
     glutMainLoop();
     return 0;
 }

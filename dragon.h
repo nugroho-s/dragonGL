@@ -26,6 +26,8 @@ public:
     dragon(const dragon& orig);
     virtual ~dragon();
     void drawWings();
+    void pahakanan();
+    void sayapkiri();
 private:
     double wings[34] = { 
 	97, 359,
@@ -49,7 +51,7 @@ private:
     int wingsLen;
     Point* wingsPoint;
     
-	int pka1[] = {
+	int pka1[18] = {
 		420, 534,
 		420, 590,
 		426, 488,
@@ -62,7 +64,7 @@ private:
 	};
 
 	// Paha kanan part 2
-	int pka2[] = {
+	int pka2[10] = {
 		411, 647,
 		429, 604,
 		431, 633,
@@ -71,7 +73,7 @@ private:
 
 	};
 	// Paha kanan part 3
-	int pka3[] = {
+	int pka3[10] = {
 		435, 691,
 		411, 647,
 		441, 696,
@@ -79,7 +81,7 @@ private:
 		435, 701
 	};
 
-	int ski1[] = {
+	int ski1[10] = {
 		349, 211,
 		421, 164,
 		467, 147,
@@ -87,7 +89,7 @@ private:
 		369, 215
 	};
 
-	int ski2[] = {
+	int ski2[16] = {
 		467, 147,
 		625, 132,
 		688, 133,
@@ -98,7 +100,7 @@ private:
 		458, 171
 	};
 
-	int ski3[] = {
+	int ski3[16] = {
 		590, 219,
 		455, 190,
 		450, 211,
@@ -109,7 +111,7 @@ private:
 		685, 261
 	};
 
-	int ski4[] = {
+	int ski4[20] = {
 		573, 276,
 		451, 211,
 		441, 229,
@@ -122,7 +124,7 @@ private:
 		656, 356
 	};
 
-	int ski5[] = {
+	int ski5[40] = {
 		511, 349,
 		518, 334,
 		514, 315,
@@ -146,7 +148,7 @@ private:
 
 	};
 
-	int ski6[] = {
+	int ski6[46] = {
 		379, 378,
 		394, 336,
 		383, 330,
@@ -172,7 +174,7 @@ private:
 		394, 336
 	};
 
-	int ski7[] = {
+	int ski7[18] = {
 		290, 361,
 		307, 348,
 		340, 364,
