@@ -1,6 +1,7 @@
-#include "stdafx.h"
 #include <GL/glut.h>
 #include <iostream>
+
+#define ymaks 1000
 
 using namespace std;
 
@@ -140,10 +141,111 @@ int ski7[] = {
 	291, 376
 };
 
-// Menggambarkan paha kanan 
+int tail_tri1[] = {
+	379,702,
+	375,726,
+	315,755,
+	304,765,
+	379,702,
+	287,747
+};
+
+int tail_strip1[] = {
+	287,747,
+	304,765,
+	262,773,
+	272,815,
+	243,824
+};
+
+int tail_fan1[] = {
+	272,815,
+	243,824,
+	253,858,
+	271,881
+};
+
+int tail_tri2[] = {
+	273,834,
+	297,900,
+	271,881
+};
+
+int tail_strip2[] = {
+	297,900,
+	280,852,
+	331,905,
+	347,884,
+	390,924,
+	403,907,
+	438,941
+};
+
+int tail_fan2[] = {
+	438,941,
+	390,924,
+	435,940,
+	451,981
+};
+
+
+// Drawing tail
+void tail(){
+	cout << "masuk tail" << endl;
+	glBegin(GL_TRIANGLES);
+	int j=0;
+	for (int i=0;i<6;i++){
+		cout << tail_tri1[j] << "," << tail_tri1[j+1]<< endl;
+		glVertex2f(tail_tri1[j],ymaks-tail_tri1[j+1]);
+		j+=2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLE_STRIP);
+	j=0;
+	for (int i=0;i<5;i++){
+		glVertex2f(tail_strip1[j],ymaks-tail_strip1[j+1]);
+		j+=2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+	j=0;
+	for (int i=0;i<4;i++){
+		glVertex2f(tail_fan1[j],ymaks-tail_fan1[j+1]);
+		j+=2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	j=0;
+	for (int i=0;i<3;i++){
+		glVertex2f(tail_tri2[j],ymaks-tail_tri2[j+1]);
+		j+=2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLE_STRIP);
+	j=0;
+	for (int i=0;i<7;i++){
+		glVertex2f(tail_strip2[j],ymaks-tail_strip2[j+1]);
+		j+=2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+	j=0;
+	for (int i=0;i<4;i++){
+		glVertex2f(tail_fan2[j],ymaks-tail_fan2[j+1]);
+		j+=2;
+	}
+	glEnd();
+}
+
+// Menggambarkan paha kanan
 void pahakanan(){
 	glBegin(GL_TRIANGLE_FAN);
-	
+
 	int j = 0;
 
 	for (int i = 0; i < 9; i++){
@@ -204,7 +306,7 @@ void sayapkiri(){
 		j = j + 2;
 	}
 	glEnd();
-	
+
 
 	glBegin(GL_TRIANGLE_FAN);
 	j = 0;
@@ -226,7 +328,7 @@ void sayapkiri(){
 	glBegin(GL_TRIANGLE_FAN);
 	j = 0;
 
-	
+
 	for (int i = 0; i < 23; i++){
 		glVertex2f(ski6[j], 1000 - ski6[j + 1]);
 		j = j + 2;
@@ -251,6 +353,7 @@ void Draw() {
 	glColor3f(1.0, 1.0, 0.0);
 	pahakanan();
 	sayapkiri();
+	tail();
 	glFlush();
 }
 
