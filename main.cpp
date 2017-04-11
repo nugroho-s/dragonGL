@@ -18,7 +18,12 @@ Point* vertex;
 
 
 void Draw() {
-	
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(1.0, 1.0, 0.0);
+	pahakanan();
+	sayapkiri();
+	drawWings();
+	glFlush();
 }
 
 

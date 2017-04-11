@@ -35,13 +35,114 @@ dragon::~dragon() {
 }
 
 void dragon::drawWings(){
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(1.0, 1.0, 0.0);
     glBegin(GL_POLYGON);
     for (int i = 0; i < wingsLen/2; i++){
             glVertex2d(wingsPoint[i].x, wingsPoint[i].y);
     }
 
     glEnd();
-    glFlush();
+}
+
+void dragon::pahakanan(){
+	glBegin(GL_TRIANGLE_FAN);
+
+	int j = 0;
+
+	for (int i = 0; i < 9; i++){
+		glVertex2f(pka1[j], 1000 - pka1[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 5; i++){
+		glVertex2f(pka2[j], 1000 - pka2[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 3; i++){
+		glVertex2f(pka3[j], 1000 - pka3[j + 1]);
+		j = j + 2;
+	}
+
+	glEnd();
+}
+
+
+//Menggambarkan sayap kiri
+void dragon::sayapkiri(){
+	glBegin(GL_TRIANGLE_FAN);
+
+	int j = 0;
+
+	for (int i = 0; i < 5; i++){
+		glVertex2f(ski1[j], 1000 - ski1[j + 1]);
+		j = j + 2;
+	}
+
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 8; i++){
+		glVertex2f(ski2[j], 1000 - ski2[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+	j = 0;
+
+	for (int i = 0; i < 8; i++){
+		glVertex2f(ski3[j], 1000 - ski3[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+
+
+	glBegin(GL_TRIANGLE_FAN);
+	j = 0;
+
+	for (int i = 0; i < 10; i++){
+		glVertex2f(ski4[j], 1000 - ski4[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+	j = 0;
+
+	for (int i = 0; i < 20; i++){
+		glVertex2f(ski5[j], 1000 - ski5[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+	glBegin(GL_TRIANGLE_FAN);
+	j = 0;
+
+
+	for (int i = 0; i < 23; i++){
+		glVertex2f(ski6[j], 1000 - ski6[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+	glBegin(GL_TRIANGLE_FAN);
+	j = 0;
+
+	for (int i = 0; i < 9; i++){
+		glVertex2f(ski7[j], 1000 - ski7[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+
+
+
 }
