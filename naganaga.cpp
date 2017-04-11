@@ -411,7 +411,6 @@ void head(){
 
 // Drawing tail
 void tail(){
-	cout << "masuk tail" << endl;
 	glBegin(GL_TRIANGLES);
 	int j=0;
 	for (int i=0;i<6;i++){
@@ -570,11 +569,11 @@ void sayapkiri(){
 // Menggambarkan keseluruhan komponen
 void Draw() {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0, 0.0, 0.0);
+	glColor3ub(255, 0, 0);
+	head();
 	pahakanan();
 	sayapkiri();
 	tail();
-	head();
 	glFlush();
 }
 
