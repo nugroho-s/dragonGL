@@ -231,11 +231,59 @@ int pki1[] = {
 };
 
 int pki2[] = {
-	502, 503,
+	505, 523,
 	503, 517,
 	483, 508,
 	506, 534,
 	532, 534
+};
+
+int pu1[] = {
+	514, 416,
+	484, 389,
+	464, 374,
+	441, 364,
+	418, 363,
+	422, 395,
+	427, 413,
+	462, 415,
+	493, 437,
+	517, 467,
+	525, 491,
+	562, 562,
+	560, 532,
+	554, 492,
+	545, 471,
+	528, 438
+};
+
+int pu2[] = {
+	557, 602,
+	561, 583,
+	562, 551,
+	534, 510,
+	542, 539,
+	540, 577,
+	525, 617,
+	508, 622,
+	499, 653,
+	462, 686,
+	450, 705,
+	450, 715,
+	458, 718,
+	475, 710,
+	501, 693,
+	529, 664,
+	545, 638
+};
+
+int pu3[] = {
+	529, 493,
+	505, 489,
+	498, 493,
+	500, 506,
+	514, 514,
+	540, 517
 };
 
 
@@ -559,6 +607,41 @@ void tail(){
 	glEnd();
 }
 
+//Menggambarkan punggung
+void punggung(){
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	int j = 0;
+
+	for (int i = 0; i < 16; i++){
+		glVertex2f(pu1[j], 1000 - pu1[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 17; i++){
+		glVertex2f(pu2[j], 1000 - pu2[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+
+	glBegin(GL_TRIANGLE_FAN);
+
+	j = 0;
+
+	for (int i = 0; i < 6; i++){
+		glVertex2f(pu3[j], 1000 - pu3[j + 1]);
+		j = j + 2;
+	}
+	glEnd();
+
+}
+
+
 // Menggambarkan paha kanan
 void pahakanan(){
 	glBegin(GL_TRIANGLE_FAN);
@@ -758,6 +841,7 @@ void Draw() {
 	pahakiri();
 	sayapkiri();
 	sayapkanan();
+	punggung();
 	tail();
 	glFlush();
 }
