@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <GL/glut.h>
 #include <iostream>
 
@@ -512,6 +511,129 @@ int head_tri7[] = {
 	336, 536
 };
 
+int llegs_fan1[] = {
+	413,710,
+	422,684,
+	430,708,
+	444,759,
+	425,729,
+	409,714
+};
+
+int llegs_fan2[] = {
+	409,714,
+	425,729,
+	397,740,
+	388,726
+};
+
+int llegs_fan3[] = {
+	378,741,
+	388,726,
+	397,740,
+	391,748,
+	385,751,
+	377,763
+};
+
+int llegs_fan4[] = {
+	426,728,
+	411,734,
+	414,736,
+	444,760
+};
+
+int llegs_fan5[] = {
+	401,749,
+	412,734,
+	424,743,
+	417,761,
+	408,766,
+	396,768
+};
+
+int llegs_tri1[] = {
+	408,766,
+	396,768,
+	400,787,
+	444,760,
+	426,759,
+	428,747,
+	430,710,
+	442,717,
+	435,733
+};
+
+int llegs_fan6[] = {
+	426,759,
+	444,760,
+	434,770,
+	430,780,
+	422,779
+};
+
+int llegs_tri2[] = {
+	430,780,
+	422,779,
+	427,793
+};
+
+int hlegs_fan1[] = {
+	511,542,
+	529,539,
+	516,562,
+	484,562,
+	491,558,
+	488,555,
+	492,556,
+	473,540,
+	495,540,
+	500,538
+};
+
+int hlegs_tri1[] = {
+	473,540,
+	473,555,
+	492,556,
+	473,540,
+	479,540,
+	473,532,
+	473,532,
+	473,545,
+	452,542
+};
+
+int hlegs_fan2[] = {
+	466,563,
+	517,561,
+	481,577,
+	460,579
+};
+
+int hlegs_tri2[] = {
+	460,579,
+	473,579,
+	458,592,
+	492,604,
+	499,601,
+	499,611
+};
+
+int hlegs_strip1[] = {
+	515,561,
+	499,569,
+	511,575,
+	499,578
+};
+
+int hlegs_fan3[] = {
+	490,581,
+	511,575,
+	509,590,
+	499,601,
+	492,604
+};
+
 //draw triangles
 /* mode
 t: GL_TRIANGLES
@@ -532,6 +654,27 @@ void drawTriangles(int* arr, int len, char mode){
 		j += 2;
 	}
 	glEnd();
+};
+
+// menggambar telapak kaki
+void legs(){
+	//telapak kaki bawah
+	drawTriangles(llegs_fan1,6,'f');
+	drawTriangles(llegs_fan2,4,'f');
+	drawTriangles(llegs_fan3,6,'f');
+	drawTriangles(llegs_fan4,4,'f');
+	drawTriangles(llegs_fan5,6,'f');
+	drawTriangles(llegs_tri1,9,'t');
+	drawTriangles(llegs_fan6,5,'f');
+	drawTriangles(llegs_tri2,3,'t');
+
+	//telapak kaki atas
+	drawTriangles(hlegs_fan1,10,'f');
+	drawTriangles(hlegs_tri1,9,'t');
+	drawTriangles(hlegs_fan2,4,'f');
+	drawTriangles(hlegs_tri2,6,'t');
+	drawTriangles(hlegs_strip1,4,'s');
+	drawTriangles(hlegs_fan3,5,'f');
 };
 
 // Drawing head
@@ -560,7 +703,6 @@ void tail(){
 	glBegin(GL_TRIANGLES);
 	int j = 0;
 	for (int i = 0; i<6; i++){
-		cout << tail_tri1[j] << "," << tail_tri1[j + 1] << endl;
 		glVertex2f(tail_tri1[j], ymaks - tail_tri1[j + 1]);
 		j += 2;
 	}
@@ -843,6 +985,7 @@ void Draw() {
 	sayapkanan();
 	punggung();
 	tail();
+	legs();
 	glFlush();
 }
 
@@ -862,9 +1005,8 @@ int main(int iArgc, char** cppArgv) {
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(800, 1000);
 	glutInitWindowPosition(0, 0);
-	glutCreateWindow("Gambar Naga");
+	glutCreateWindow("Blood Dragon");
 	Initialize();
-	cout << "Semangat" << endl << endl;
 	glutDisplayFunc(Draw);
 	glutMainLoop();
 	return 0;
