@@ -634,6 +634,12 @@ int hlegs_fan3[] = {
 	492,604
 };
 
+int eye_tri[] = {
+	284,505,
+	307,520,
+	279,523
+};
+
 //draw triangles
 /* mode
 t: GL_TRIANGLES
@@ -696,6 +702,10 @@ void head(){
 	drawTriangles(head_fan8, 6, 'f');
 	drawTriangles(head_fan9, 6, 'f');
 	drawTriangles(head_tri7, 21, 't');
+};
+
+void eye(){
+	drawTriangles(eye_tri,3,'t');
 };
 
 // Drawing tail
@@ -986,6 +996,8 @@ void Draw() {
 	punggung();
 	tail();
 	legs();
+	glColor3ub(255, 215, 0);
+	eye();
 	glFlush();
 }
 
